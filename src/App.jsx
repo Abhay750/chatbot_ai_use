@@ -63,7 +63,7 @@ export default function App() {
     setIsGeneratingImage(true);
     try {
       const blob = await hf.textToImage({
-        model: 'stabilityai/stable-diffusion-xl-base-1.0',
+        model: 'black-forest-labs/FLUX.1-schnell',
         inputs: imagePrompt,
       });
 
