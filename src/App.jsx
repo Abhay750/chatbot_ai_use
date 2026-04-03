@@ -55,6 +55,10 @@ export default function App() {
   };
 
   const handleGenerateImage = async () => {
+    if (!import.meta.env.VITE_HF_TOKEN) {
+      alert("Missing API Token! Please add VITE_HF_TOKEN to your Vercel Environment Variables.");
+      return;
+    }
     if (!imagePrompt.trim()) return;
     setIsGeneratingImage(true);
     try {
@@ -74,6 +78,10 @@ export default function App() {
   };
 
   const handleGenerateText = async () => {
+    if (!import.meta.env.VITE_HF_TOKEN) {
+      alert("Missing API Token! Please add VITE_HF_TOKEN to your Vercel Environment Variables.");
+      return;
+    }
     if (!textPrompt.trim()) return;
     
     // Add user message to UI immediately
